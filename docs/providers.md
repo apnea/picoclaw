@@ -11,6 +11,7 @@
 | ------------ | --------------------------------------- | ------------------------------------------------------------ |
 | `gemini`     | LLM (Gemini direct)                     | [aistudio.google.com](https://aistudio.google.com)           |
 | `zhipu`      | LLM (Zhipu direct)                      | [bigmodel.cn](https://bigmodel.cn)                           |
+| `z.ai`       | LLM (Z.AI Coding Plan)                  | [z.ai](https://z.ai)                                         |
 | `volcengine` | LLM(Volcengine direct)                  | [volcengine.com](https://www.volcengine.com/activity/codingplan?utm_campaign=PicoClaw&utm_content=PicoClaw&utm_medium=devrel&utm_source=OWO&utm_term=PicoClaw)                 |
 | `openrouter` | LLM (recommended, access to all models) | [openrouter.ai](https://openrouter.ai)                       |
 | `anthropic`  | LLM (Claude direct)                     | [console.anthropic.com](https://console.anthropic.com)       |
@@ -47,6 +48,7 @@ This design also enables **multi-agent support** with flexible provider selectio
 | **OpenAI**          | `openai/`         | `https://api.openai.com/v1`                         | OpenAI    | [Get Key](https://platform.openai.com)                           |
 | **Anthropic**       | `anthropic/`      | `https://api.anthropic.com/v1`                      | Anthropic | [Get Key](https://console.anthropic.com)                         |
 | **智谱 AI (GLM)**   | `zhipu/`          | `https://open.bigmodel.cn/api/paas/v4`              | OpenAI    | [Get Key](https://open.bigmodel.cn/usercenter/proj-mgmt/apikeys) |
+| **Z.AI coding plan (GLM)**      | `openai/`          | `https://api.z.ai/api/coding/paas/v4`               | OpenAI    | [Get Key](https://z.ai/manage-apikey/apikey-list) |
 | **DeepSeek**        | `deepseek/`       | `https://api.deepseek.com/v1`                       | OpenAI    | [Get Key](https://platform.deepseek.com)                         |
 | **Google Gemini**   | `gemini/`         | `https://generativelanguage.googleapis.com/v1beta`  | OpenAI    | [Get Key](https://aistudio.google.com/api-keys)                  |
 | **Groq**            | `groq/`           | `https://api.groq.com/openai/v1`                    | OpenAI    | [Get Key](https://console.groq.com)                              |
@@ -159,6 +161,19 @@ If `voice.model_name` is not configured, PicoClaw will continue to fall back to 
   "model_name": "glm-4.7",
   "model": "zhipu/glm-4.7",
   "api_key": "your-key"
+}
+```
+
+**Z.AI (GLM Coding Plan)**
+
+> Z.AI and 智谱 AI are different brands of the same provider. For the Z.AI coding plan use the model key `openai` and api base as follows, rather than the zhipu config
+
+```json
+{
+  "model_name": "glm-4.7",
+  "model": "openai/glm-4.7",
+  "api_key": "your-key",
+  "api_base": "https://api.z.ai/api/coding/paas/v4"
 }
 ```
 
